@@ -1,3 +1,10 @@
+import re
+
+def validate_phone(phone: str) -> bool:
+    """Валидация российского номера телефона."""
+    pattern = r'^\+?7\d{10}$'
+    cleaned = phone.replace('-', '').replace(' ', '')
+    return bool(re.match(pattern, cleaned))
 # validator.py
 def validate_email(email: str) -> bool:
     """Валидация email-адреса."""
